@@ -4,10 +4,11 @@ const App = express()
 const userrouter = require("./routes/userroute")
 const authrouter = require("./routes/authroute")
 const mongoose = require("mongoose")
+const cors = require('cors');
 // const productrouter = require("./routes/productroute")
 
 
-
+App.use(cors())
 App.use(express.json())
 App.use("/users",userrouter)
 App.use("/auth",authrouter)
